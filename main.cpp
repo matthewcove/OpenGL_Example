@@ -1,3 +1,4 @@
+#include <GL/glew.h>
 #include <GLFW/glfw3.h>
 
 int main(void)
@@ -7,6 +8,7 @@ int main(void)
     /* Initialize the library */
     if (!glfwInit())
         return -1;
+    glewInit();
 
     /* Create a windowed mode window and its OpenGL context */
     window = glfwCreateWindow(640, 480, "Hello World", NULL, NULL);
@@ -26,7 +28,7 @@ int main(void)
         glClear(GL_COLOR_BUFFER_BIT);
 
         glBegin(GL_TRIANGLES);
-        glColor3f(0.1, 0.2, 0.3);
+        glColor3f(0.1f, 0.2f, 0.3f);
         glVertex3f(0, 0, 0);
         glVertex3f(1, 0, 0);
         glVertex3f(0, 1, 0);
